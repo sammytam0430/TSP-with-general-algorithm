@@ -1,4 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/assignment2.dir/City.cpp.o"
+  "CMakeFiles/assignment2.dir/GeneticAlgorithm.cpp.o"
+  "CMakeFiles/assignment2.dir/Tour.cpp.o"
   "CMakeFiles/assignment2.dir/main.cpp.o"
   "assignment2.exe"
   "assignment2.pdb"

@@ -123,6 +123,87 @@ assignment2/fast:
 	$(MAKE) -f CMakeFiles/assignment2.dir/build.make CMakeFiles/assignment2.dir/build
 .PHONY : assignment2/fast
 
+City.o: City.cpp.o
+
+.PHONY : City.o
+
+# target to build an object file
+City.cpp.o:
+	$(MAKE) -f CMakeFiles/assignment2.dir/build.make CMakeFiles/assignment2.dir/City.cpp.o
+.PHONY : City.cpp.o
+
+City.i: City.cpp.i
+
+.PHONY : City.i
+
+# target to preprocess a source file
+City.cpp.i:
+	$(MAKE) -f CMakeFiles/assignment2.dir/build.make CMakeFiles/assignment2.dir/City.cpp.i
+.PHONY : City.cpp.i
+
+City.s: City.cpp.s
+
+.PHONY : City.s
+
+# target to generate assembly for a file
+City.cpp.s:
+	$(MAKE) -f CMakeFiles/assignment2.dir/build.make CMakeFiles/assignment2.dir/City.cpp.s
+.PHONY : City.cpp.s
+
+GeneticAlgorithm.o: GeneticAlgorithm.cpp.o
+
+.PHONY : GeneticAlgorithm.o
+
+# target to build an object file
+GeneticAlgorithm.cpp.o:
+	$(MAKE) -f CMakeFiles/assignment2.dir/build.make CMakeFiles/assignment2.dir/GeneticAlgorithm.cpp.o
+.PHONY : GeneticAlgorithm.cpp.o
+
+GeneticAlgorithm.i: GeneticAlgorithm.cpp.i
+
+.PHONY : GeneticAlgorithm.i
+
+# target to preprocess a source file
+GeneticAlgorithm.cpp.i:
+	$(MAKE) -f CMakeFiles/assignment2.dir/build.make CMakeFiles/assignment2.dir/GeneticAlgorithm.cpp.i
+.PHONY : GeneticAlgorithm.cpp.i
+
+GeneticAlgorithm.s: GeneticAlgorithm.cpp.s
+
+.PHONY : GeneticAlgorithm.s
+
+# target to generate assembly for a file
+GeneticAlgorithm.cpp.s:
+	$(MAKE) -f CMakeFiles/assignment2.dir/build.make CMakeFiles/assignment2.dir/GeneticAlgorithm.cpp.s
+.PHONY : GeneticAlgorithm.cpp.s
+
+Tour.o: Tour.cpp.o
+
+.PHONY : Tour.o
+
+# target to build an object file
+Tour.cpp.o:
+	$(MAKE) -f CMakeFiles/assignment2.dir/build.make CMakeFiles/assignment2.dir/Tour.cpp.o
+.PHONY : Tour.cpp.o
+
+Tour.i: Tour.cpp.i
+
+.PHONY : Tour.i
+
+# target to preprocess a source file
+Tour.cpp.i:
+	$(MAKE) -f CMakeFiles/assignment2.dir/build.make CMakeFiles/assignment2.dir/Tour.cpp.i
+.PHONY : Tour.cpp.i
+
+Tour.s: Tour.cpp.s
+
+.PHONY : Tour.s
+
+# target to generate assembly for a file
+Tour.cpp.s:
+	$(MAKE) -f CMakeFiles/assignment2.dir/build.make CMakeFiles/assignment2.dir/Tour.cpp.s
+.PHONY : Tour.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +240,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... assignment2"
 	@echo "... edit_cache"
+	@echo "... City.o"
+	@echo "... City.i"
+	@echo "... City.s"
+	@echo "... GeneticAlgorithm.o"
+	@echo "... GeneticAlgorithm.i"
+	@echo "... GeneticAlgorithm.s"
+	@echo "... Tour.o"
+	@echo "... Tour.i"
+	@echo "... Tour.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

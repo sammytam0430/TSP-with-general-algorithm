@@ -80,6 +80,24 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/cygdrive/c/Users/sammy/CLionProjects/assignment2/City.cpp">
+			<Option target="assignment2"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/sammy/CLionProjects/assignment2/City.hpp">
+			<Option target="assignment2"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/sammy/CLionProjects/assignment2/GeneticAlgorithm.cpp">
+			<Option target="assignment2"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/sammy/CLionProjects/assignment2/GeneticAlgorithm.hpp">
+			<Option target="assignment2"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/sammy/CLionProjects/assignment2/Tour.cpp">
+			<Option target="assignment2"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/sammy/CLionProjects/assignment2/Tour.hpp">
+			<Option target="assignment2"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Users/sammy/CLionProjects/assignment2/main.cpp">
 			<Option target="assignment2"/>
 		</Unit>
