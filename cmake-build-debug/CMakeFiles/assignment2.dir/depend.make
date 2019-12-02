@@ -4,11 +4,6 @@
 CMakeFiles/assignment2.dir/City.cpp.o: ../City.cpp
 CMakeFiles/assignment2.dir/City.cpp.o: ../City.hpp
 
-CMakeFiles/assignment2.dir/GeneticAlgorithm.cpp.o: ../City.hpp
-CMakeFiles/assignment2.dir/GeneticAlgorithm.cpp.o: ../GeneticAlgorithm.cpp
-CMakeFiles/assignment2.dir/GeneticAlgorithm.cpp.o: ../GeneticAlgorithm.hpp
-CMakeFiles/assignment2.dir/GeneticAlgorithm.cpp.o: ../Tour.hpp
-
 CMakeFiles/assignment2.dir/Tour.cpp.o: ../City.hpp
 CMakeFiles/assignment2.dir/Tour.cpp.o: ../Tour.cpp
 CMakeFiles/assignment2.dir/Tour.cpp.o: ../Tour.hpp

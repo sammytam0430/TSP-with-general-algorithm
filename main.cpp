@@ -5,9 +5,7 @@
 
 using namespace std;
 
-void mutate(vector<Tour *> vector);
-
-void swap(vector<Tour *> population, int index) {
+void swapToFront(vector<Tour *> &population, int index) {
     Tour *tmp = population[0];
     population.assign(0, population[index]);
     population.assign(index, tmp);
@@ -24,11 +22,12 @@ size_t getFittest(vector<Tour *> population) {
     return fittestTourIndex;
 }
 
-vector<Tour *> select_parents(vector<Tour *> population) {
+vector<Tour *> select_parents(vector<Tour *> &population) {
     random_device dev;
     mt19937 rng(dev());
     uniform_int_distribution<> num(0, POPULATION_SIZE - 1);
-    size_t parentIndex = 0;
+
+    size_t fittest = 0;
 
     vector<Tour *> parents{NUMBER_OF_PARENTS};
     vector<Tour *> parent_pool{PARENT_POOL_SIZE};
@@ -38,8 +37,8 @@ vector<Tour *> select_parents(vector<Tour *> population) {
             int k = num(rng);
             parent_pool[j] = population[k];
         }
-        parentIndex = getFittest(parent_pool);
-        parents[i] = parent_pool[parentIndex];
+        fittest = getFittest(parent_pool);
+        parents[i] = parent_pool[fittest];
     }
     return parents;
 }
@@ -55,10 +54,10 @@ bool containsCity(Tour *candidate_tour, int boundary, City *city) {
     return false;
 }
 
-Tour *crossover(vector<Tour *> parents) {
+Tour *crossover(vector<Tour *> &parents) {
     random_device dev;
     mt19937 rng(dev());
-    uniform_int_distribution<> num(0, CITIES_IN_TOUR);
+    uniform_int_distribution<> num(0, CITIES_IN_TOUR - 1);
     Tour *child = new Tour;
     int boundaryIndex = num(rng);
 
@@ -77,17 +76,17 @@ Tour *crossover(vector<Tour *> parents) {
     return child;
 }
 
-void mutate(vector<Tour *> population) {
+void mutate(vector<Tour *> &population) {
     random_device dev;
     mt19937 rng(dev());
-    uniform_real_distribution<> dRand(0.0, RAND_MAX);
-    uniform_int_distribution<> iRand(0.0, CITIES_IN_TOUR);
+    uniform_real_distribution<> dRand(0, 1);
+    uniform_int_distribution<> iRand(0, CITIES_IN_TOUR - 1);
 
-    for (int i = 0 + NUMBER_OF_ELITES; i < POPULATION_SIZE; ++i) {
+    for (int i = NUMBER_OF_ELITES; i < POPULATION_SIZE; ++i) {
         for (int j = 0; j < CITIES_IN_TOUR; ++j) {
-            if ( dRand(rng) <= MUTATION_RATE) {
+            if (dRand(rng) <= MUTATION_RATE) {
                 int rand = iRand(rng);
-                City* temp = population[i]->cities[j];
+                City *temp = population[i]->cities[j];
                 population[i]->cities[j] = population[i]->cities[rand];
                 population[i]->cities[rand] = temp;
             }
@@ -124,7 +123,7 @@ int main() {
 
     for (i = 0; i < ITERATIONS && baseDistance / bestDistance > IMPROVEMENT_FACTOR; ++i) {
         if (fittestTourIndex != 0)
-            swap(population, fittestTourIndex);
+            swapToFront(population, fittestTourIndex);
 
         for (int j = 0; j < (POPULATION_SIZE - NUMBER_OF_ELITES); ++j) {
             vector<Tour *> parents = select_parents(population);
@@ -133,7 +132,7 @@ int main() {
 
         for (int k = NUMBER_OF_ELITES; k < POPULATION_SIZE; ++k) {
             population[k] = cross[k - NUMBER_OF_ELITES];
-            population[k]->fitnessRating = 0.0;
+            population[k]->determineFitness();
         }
 
         mutate(population);
@@ -142,18 +141,13 @@ int main() {
         fittestTour = population[fittestTourIndex];
         bestDistance = fittestTour->getTourDistance();
 
-        cout << "Iteration " << i << endl;
-
-        if (bestDistance < baseDistance) {
-            baseDistance = bestDistance;
-            population[fittestTourIndex]->print();
-            cout << "|| Distance: " << fixed << setprecision(3) << bestDistance;
-            cout << endl;
-        }
+        cout << "Iteration: " << i << " Best Distance: " << fixed << setprecision(3) << bestDistance << endl;
     }
 
     cout << "=============================================================" << endl;
-    cout << "Shortest distance: " << FITNESS_SCALAR / population[fittestTourIndex]->fitnessRating;
+    cout << "Iterations: " << i << endl;
+    cout << "Base distance: " << baseDistance << " Best Distance: " << bestDistance << endl;
+    cout << "Achieved improvement factor" << (baseDistance / bestDistance > IMPROVEMENT_FACTOR) << endl;
 
     for (City *city : cities)
         delete city;

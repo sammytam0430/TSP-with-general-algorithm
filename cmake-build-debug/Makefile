@@ -150,33 +150,6 @@ City.cpp.s:
 	$(MAKE) -f CMakeFiles/assignment2.dir/build.make CMakeFiles/assignment2.dir/City.cpp.s
 .PHONY : City.cpp.s
 
-GeneticAlgorithm.o: GeneticAlgorithm.cpp.o
-
-.PHONY : GeneticAlgorithm.o
-
-# target to build an object file
-GeneticAlgorithm.cpp.o:
-	$(MAKE) -f CMakeFiles/assignment2.dir/build.make CMakeFiles/assignment2.dir/GeneticAlgorithm.cpp.o
-.PHONY : GeneticAlgorithm.cpp.o
-
-GeneticAlgorithm.i: GeneticAlgorithm.cpp.i
-
-.PHONY : GeneticAlgorithm.i
-
-# target to preprocess a source file
-GeneticAlgorithm.cpp.i:
-	$(MAKE) -f CMakeFiles/assignment2.dir/build.make CMakeFiles/assignment2.dir/GeneticAlgorithm.cpp.i
-.PHONY : GeneticAlgorithm.cpp.i
-
-GeneticAlgorithm.s: GeneticAlgorithm.cpp.s
-
-.PHONY : GeneticAlgorithm.s
-
-# target to generate assembly for a file
-GeneticAlgorithm.cpp.s:
-	$(MAKE) -f CMakeFiles/assignment2.dir/build.make CMakeFiles/assignment2.dir/GeneticAlgorithm.cpp.s
-.PHONY : GeneticAlgorithm.cpp.s
-
 Tour.o: Tour.cpp.o
 
 .PHONY : Tour.o
@@ -243,9 +216,6 @@ help:
 	@echo "... City.o"
 	@echo "... City.i"
 	@echo "... City.s"
-	@echo "... GeneticAlgorithm.o"
-	@echo "... GeneticAlgorithm.i"
-	@echo "... GeneticAlgorithm.s"
 	@echo "... Tour.o"
 	@echo "... Tour.i"
 	@echo "... Tour.s"
